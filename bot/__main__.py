@@ -8,6 +8,7 @@ from sys import executable
 from datetime import datetime
 import pytz
 import time
+from telegram import InlineKeyboardMarkup
 from telegram import ParseMode
 from telegram.ext import CommandHandler, run_async
 from bot import dispatcher, updater, botStartTime, AUTHORIZED_CHATS
@@ -17,6 +18,7 @@ from bot.helper.telegram_helper.message_utils import *
 from .helper.ext_utils.bot_utils import get_readable_file_size, get_readable_time
 from .helper.telegram_helper.filters import CustomFilters
 from .modules import authorize, list, cancel_mirror, mirror_status, mirror, clone, watch, shell, eval, anime, stickers, search, delete, speedtest, usage
+from bot.helper.telegram_helper import button_build
 
 now=datetime.now(pytz.timezone('Asia/Jakarta'))
 
@@ -96,42 +98,10 @@ def log(update, context):
 
 @run_async
 def bot_help(update, context):
-    help_string = f'''
-/{BotCommands.HelpCommand}: To get this message
+    share_url = ('https://telegra.ph/SAYU-COMMAND-LIST-04-28')
+    buttons.buildbutton("HELP", share_url) 
 
-/{BotCommands.MirrorCommand} [download_url][magnet_link]: Start mirroring the link to google drive
-
-/{BotCommands.UnzipMirrorCommand} [download_url][magnet_link]: Starts mirroring and if downloaded file is any archive, extracts it to google drive
-
-/{BotCommands.TarMirrorCommand} [download_url][magnet_link]: Start mirroring and upload the archived (.tar) version of the download
-
-/{BotCommands.CloneCommand}: Copy file/folder to google drive
-
-/{BotCommands.WatchCommand} [youtube-dl supported link]: Mirror through youtube-dl. Click /{BotCommands.WatchCommand} for more help.
-
-/{BotCommands.TarWatchCommand} [youtube-dl supported link]: Mirror through youtube-dl and tar before uploading
-
-/{BotCommands.CancelMirror}: Reply to the message by which the download was initiated and that download will be cancelled
-
-/{BotCommands.StatusCommand}: Shows a status of all the downloads
-
-/{BotCommands.ListCommand} [search term]: Searches the search term in the Google drive, if found replies with the link
-
-/{BotCommands.StatsCommand}: Show Stats of the machine the bot is hosted on
-
-/{BotCommands.LogCommand}: Get a log file of the bot. Handy for getting crash reports
-
-/{BotCommands.SpeedCommand}: Check Internet Speed of the Host
-
-/{BotCommands.OwnerCommand}: Check Who is My master.
-
-/tshelp: Get help for torrent search module.
-
-/weebhelp: Get help for anime, manga and character module.
-
-/stickerhelp: Get help for stickers module.
-'''
-    sendMessage(help_string, context.bot, update)
+    sendMessage(context.bot, update, InlineKeyboardMarkup(buttons))
 
 
 def main():
