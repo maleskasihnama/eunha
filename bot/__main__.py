@@ -8,7 +8,7 @@ from sys import executable
 from datetime import datetime
 import pytz
 import time
-from telegram import InlineKeyboardMarkup
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram import ParseMode
 from telegram.ext import CommandHandler, run_async
 from bot import dispatcher, updater, botStartTime, AUTHORIZED_CHATS
@@ -98,11 +98,7 @@ def log(update, context):
 
 @run_async
 def bot_help(update, context):
-    buttons = button_build.ButtonMaker()
-    share_url = ('https://telegra.ph/SAYU-COMMAND-LIST-04-28')
-    buttons.buildbutton("HELP", share_url) 
-
-    sendMarkup(context.bot, update, buttons)
+    sendMessage(context.bot, update, InlineKeyboardButton(text='HELP', url='https://telegra.ph/SAYU-COMMAND-LIST-04-28'))
 
 
 def main():
