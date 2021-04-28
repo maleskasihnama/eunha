@@ -102,7 +102,7 @@ def bot_help(update, context):
     share_url = ('https://telegra.ph/SAYU-COMMAND-LIST-04-28')
     buttons.buildbutton("HELP", share_url) 
 
-    sendMessage(context.bot, update, buttons)
+    sendMarkup(context.bot, update, buttons)
 
 
 def main():
