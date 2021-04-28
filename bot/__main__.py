@@ -44,7 +44,7 @@ def stats(update, context):
             f'<b>CPU:</b> {cpuUsage}%\n' \
             f'<b>RAM:</b> {memory}%\n' \
             f'<b>Disk:</b> {disk}%'
-    update.effective_message.reply_photo("https://telegra.ph/file/044017033ca7028c9fc85.jpg", stats, parse_mode=ParseMode.HTML)
+    update.effective_message.reply_photo("https://cloud.kyaa.tech/index.php/s/i1x9Jndhr8oFFWQ/download", stats, parse_mode=ParseMode.HTML)
 
 
 @run_async
@@ -53,7 +53,7 @@ def start(update, context):
 This bot can mirror all your links to Google drive!
 Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
-    update.effective_message.reply_photo("https://telegra.ph/file/044017033ca7028c9fc85.jpg", start_string, parse_mode=ParseMode.MARKDOWN)
+    update.effective_message.reply_photo("https://cloud.kyaa.tech/index.php/s/i1x9Jndhr8oFFWQ/download", start_string, parse_mode=ParseMode.MARKDOWN)
 
 
 @run_async
@@ -67,7 +67,7 @@ def chat_list(update, context):
 def owner(update, context):
     bot.send_message(update.message.chat_id,
     reply_to_message_id=update.message.message_id,
-    text="Owner: https://t.me/oViNc", disable_web_page_preview=True)
+    text="Owner: https://t.me/kanggratisan", disable_web_page_preview=True)
 
 
 @run_async
@@ -119,13 +119,7 @@ def bot_help(update, context):
 
 /{BotCommands.StatsCommand}: Show Stats of the machine the bot is hosted on
 
-/{BotCommands.AuthorizeCommand}: Authorize a chat or a user to use the bot (Can only be invoked by owner of the bot)
-
-/{BotCommands.AuthListCommand}: See Authorized list (Can only be invoked by owner of the bot)
-
 /{BotCommands.LogCommand}: Get a log file of the bot. Handy for getting crash reports
-
-/{BotCommands.UsageCommand}: To see Heroku Dyno Stats (Owner only).
 
 /{BotCommands.SpeedCommand}: Check Internet Speed of the Host
 
