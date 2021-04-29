@@ -98,8 +98,25 @@ def log(update, context):
 
 @run_async
 def bot_help(update, context):
-    sendMessage(context.bot, update, InlineKeyboardButton(text='HELP', url='https://telegra.ph/SAYU-COMMAND-LIST-04-28'))
-
+    help_string = f'''
+/{BotCommands.HelpCommand}: To get this message
+/{BotCommands.MirrorCommand}: Start mirroring the link to google drive
+/{BotCommands.UnzipMirrorCommand}: Starts mirroring and if downloaded file is any archive, extracts it to google drive
+/{BotCommands.TarMirrorCommand}: Start mirroring and upload the archived (.tar) version of the download
+/{BotCommands.CloneCommand}: Copy file/folder to google drive
+/{BotCommands.WatchCommand} Youtube Download Click /{BotCommands.WatchCommand} for more help.
+/{BotCommands.CancelMirror}: Reply to the message by which the download was initiated and that download will be cancelled
+/{BotCommands.StatusCommand}: Shows a status of all the downloads
+/{BotCommands.ListCommand}: Search File In Google Drive
+/{BotCommands.StatsCommand}: Show Stats of the machine the bot is hosted on
+/{BotCommands.LogCommand}: Get a log file of the bot. Handy for getting crash reports
+/{BotCommands.SpeedCommand}: Check Internet Speed of the Host
+/{BotCommands.OwnerCommand}: Check Who is My master.
+/tshelp: Get help for torrent search module.
+/weebhelp: Get help for anime, manga and character module.
+/stickerhelp: Get help for stickers module.
+'''
+    sendMessage(help_string, context.bot, update)
 
 def main():
     fs_utils.start_cleanup()
