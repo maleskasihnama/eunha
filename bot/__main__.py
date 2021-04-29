@@ -112,9 +112,6 @@ def bot_help(update, context):
 /{BotCommands.LogCommand}: Get a log file of the bot. Handy for getting crash reports
 /{BotCommands.SpeedCommand}: Check Internet Speed of the Host
 /{BotCommands.OwnerCommand}: Check Who is My master.
-/tshelp: Get help for torrent search module.
-/weebhelp: Get help for anime, manga and character module.
-/stickerhelp: Get help for stickers module.
 '''
     sendMessage(help_string, context.bot, update)
 
