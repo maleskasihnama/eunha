@@ -46,7 +46,7 @@ def stats(update, context):
             f'<b>CPU:</b> {cpuUsage}%\n' \
             f'<b>RAM:</b> {memory}%\n' \
             f'<b>Disk:</b> {disk}%'
-    update.effective_message.reply_photo("https://cloud.kyaa.tech/index.php/s/LgNXlF1wH1HNCpF/download", stats, parse_mode=ParseMode.HTML)
+    update.effective_message.reply_photo("https://cloud.kyaa.tech/index.php/s/PJawh2rQ6jUZy9z/download", stats, parse_mode=ParseMode.HTML)
 
 
 @run_async
@@ -55,7 +55,7 @@ def start(update, context):
 This bot can mirror all your links to Google drive!
 Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
-    update.effective_message.reply_photo("https://cloud.kyaa.tech/index.php/s/LgNXlF1wH1HNCpF/download", start_string, parse_mode=ParseMode.MARKDOWN)
+    update.effective_message.reply_photo("https://cloud.kyaa.tech/index.php/s/PJawh2rQ6jUZy9z/download", start_string, parse_mode=ParseMode.MARKDOWN)
 
 
 @run_async
