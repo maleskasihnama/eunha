@@ -17,7 +17,7 @@ from bot.helper.telegram_helper.bot_commands import BotCommands
 from bot.helper.telegram_helper.message_utils import *
 from .helper.ext_utils.bot_utils import get_readable_file_size, get_readable_time
 from .helper.telegram_helper.filters import CustomFilters
-from .modules import authorize, list, cancel_mirror, mirror_status, mirror, clone, watch, shell, eval, anime, stickers, search, delete, speedtest, usage
+from .modules import authorize, list, cancel_mirror, mirror_status, mirror, clone, watch, shell, eval, delete, speedtest, usage
 from bot.helper.telegram_helper import button_build
 
 now=datetime.now(pytz.timezone('Asia/Jakarta'))
@@ -46,7 +46,7 @@ def stats(update, context):
             f'<b>CPU:</b> {cpuUsage}%\n' \
             f'<b>RAM:</b> {memory}%\n' \
             f'<b>Disk:</b> {disk}%'
-    update.effective_message.reply_photo("https://cloud.kyaa.tech/index.php/s/i1x9Jndhr8oFFWQ/download", stats, parse_mode=ParseMode.HTML)
+    update.effective_message.reply_photo("https://cloud.kyaa.tech/index.php/s/LgNXlF1wH1HNCpF/download", stats, parse_mode=ParseMode.HTML)
 
 
 @run_async
@@ -55,7 +55,7 @@ def start(update, context):
 This bot can mirror all your links to Google drive!
 Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
-    update.effective_message.reply_photo("https://cloud.kyaa.tech/index.php/s/i1x9Jndhr8oFFWQ/download", start_string, parse_mode=ParseMode.MARKDOWN)
+    update.effective_message.reply_photo("https://cloud.kyaa.tech/index.php/s/LgNXlF1wH1HNCpF/download", start_string, parse_mode=ParseMode.MARKDOWN)
 
 
 @run_async
